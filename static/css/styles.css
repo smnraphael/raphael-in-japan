@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(252, 240, 224);
+    color: rgb(100, 100, 100);
+}
+
+.transparent {
+    background-color: rgba(252, 240, 224, .9);
+}
+
+.name {
+    font-size: 42px;
+    margin-left: 15px;
+    font-family: 'Kaushan Script', cursive;
+    color: rgb(164, 76, 77);
+}
+
+.nav-link {
+    margin-right: 15px;
+}
+
+.l, .r, #post {
+    border: solid 2px rgb(164, 76, 77);
+    border-radius: 5px;
+    background-color: rgb(164, 76, 77);
+    color: rgb(252, 240, 224);
+    transition: color .1s;
+    transition: background-color .1s;
+}
+
+.l:hover, .r:hover, #post:hover {
+    border: solid 2px rgb(164, 76, 77);
+    border-radius: 5px;
+    background-color: rgb(252, 240, 224);
+    color: rgb(164, 76, 77);
+    transition: color .1s;
+    transition: background-color .1s;
+}
+
+.jp {
+    color: rgb(164, 76, 77);
+}
+
+.space {
+    height: 91px;
+}
+
+.admin {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(244, 230, 211);
+    height: 300px;
+    border-radius: 5px;
+}
+
+h4 {
+    color: black;
+}
+
+.index {
+    height: 500px;
+    margin-top: 50px;
+}
+
+.add {
+    height: 75px;
+    width: 75px;
+}
+
+.add:hover {
+    cursor: pointer;
+}
+
+#post {
+    padding: 10px 25px 10px;
+    border: solid 2px rgb(164, 76, 77);
+    border-radius: 5px;
+    background-color: rgb(164, 76, 77);
+    color: rgb(244, 230, 211);
+    font-size: 20px;
+}
+
+#file {
+    display: none;
+}
+
+.text {
+    height: 150px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    transition: box-shadow .3s;
+    resize: none;
+}
+
+.text:hover {
+    box-shadow: 0 0 3pt .1pt rgb(220, 221, 225);
+    transition: box-shadow .3s;
+}
+
+.col {
+    padding: 0;
+}
+
+.picture {
+    height: 350px;
+    width: 350px;
+    margin: 25px;
+    border-radius: 5px;
+}
+
+.content {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.container {
+    background-color: rgb(244, 230, 211);
+    margin: 25px auto 25px;
+    text-align: left;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.sub {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+}
+
+.subcontent {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.title {
+    height: 45px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    transition: box-shadow .3s;
+    resize: none;
+}
+
+h5 {
+    color: rgb(164, 76, 77);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.txt {
+    width: 100%;
+    padding-right: 25px;
+}
+
+.txt, .delete {
+    margin-top: 25px;
+}
+
+.delete {
+    text-align: center;
+    margin-right: 25px;
+}
+
+.delete2 {
+    border: none;
+    background: none;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 24px;
+}
+
+.i {
+    width: 300px;
+}
+
+.t {
+    width: 950px;
+}

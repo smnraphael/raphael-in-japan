@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    {% for post in posts %}
+    <div class="container">
+        <div class="flex">
+            <div>
+                <img src="data:image/png;base64,{{ post.image.decode() }}" id="picture" class="picture" data-tilt data-tilt-max="10">
+            </div>
+            <div class="sub">
+                <div>
+                    <h4 class="jp">{{ post.title }}</h4>
+                </div>
+                <div>
+                    <p class="txt">{{ post.text }}</p>
+                </div>
+            </div>
+            <form class="delete">
+                <button class="delete2"></button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
