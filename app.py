@@ -1,4 +1,3 @@
-import os
 from flask import Flask, flash, redirect, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
@@ -8,20 +7,11 @@ import base64
 
 app = Flask(__name__)
 
-
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = SQL("sqlite:///database.db")
-
-@app.after_request
-def after_request(response):
-    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    response.headers["Expires"] = 0
-    response.headers["Pragma"] = "no-cache"
-    return response
-
 
 def login_required(f):
     @wraps(f)
@@ -30,6 +20,14 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+@app.after_request
+def after_request(response):
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Expires"] = 0
+    response.headers["Pragma"] = "no-cache"
+    return response
+
 
 @app.route('/')
 def index():
@@ -63,8 +61,6 @@ def register():
 
         return render_template('index.html')
     
-       
-
     else:
         return render_template("register.html")
 
@@ -108,7 +104,6 @@ def post():
         title = request.form.get("title")
         text = request.form.get("text")
 
-        
         if not text:
             return render_template('error.html')
 
@@ -120,8 +115,10 @@ def post():
         posts = db.execute("SELECT * FROM posts ORDER BY timestamp DESC")
         image = db.execute("SELECT image FROM posts ORDER BY timestamp DESC")
         id = session["user_id"]
+
         if id == 1:
             return render_template("post.html", posts=posts, image=image)
+        
         else:
             return render_template('forbidden.html')
 
